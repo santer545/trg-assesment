@@ -1,0 +1,6 @@
+<div class="location-wrapper">
+  <trg-location-list
+    *ngIf="locations$ | async as locations"
+    [locations]="locations"
+  ></trg-location-list>
+</div>

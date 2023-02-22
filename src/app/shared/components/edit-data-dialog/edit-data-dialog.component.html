@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>Create new location</h1>
+<pre>
+  {{ location | json }}
+</pre>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Location Name</mat-label>
+    <input matInput [(ngModel)]="location.name" />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>X-Coord</mat-label>
+    <input matInput type="number" [(ngModel)]="location.xCoord" />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Y-Coord</mat-label>
+    <input matInput type="number" [(ngModel)]="location.yCoord" />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="closeDialog()">Close</button>
+  <button
+    mat-raised-button
+    color="primary"
+    [mat-dialog-close]="location"
+    cdkFocusInitial
+  >
+    Update Location
+  </button>
+</div>

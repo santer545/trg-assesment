@@ -16,12 +16,13 @@ export class LocationsComponent implements OnInit {
   ngOnInit(): void {
     this.locations$ = this.locationService.getLocationSet().pipe(
       map((locations) =>
-        locations.map((location) => {
+        locations.map((location, index) => {
           return {
+            id: Date.now(),
             xCoord: location.coordinates[0],
             yCoord: location.coordinates[1],
             name: location.name,
-          };
+          } satisfies LocationData;
         })
       )
     );

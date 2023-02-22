@@ -1,0 +1,17 @@
+.locations-list-wrapper {
+  margin-bottom: 20px;
+}
+
+.actions-tool {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+:host ::ng-deep {
+  .mat-mdc-button {
+    & > .mat-icon {
+      margin-right: 0;
+    }
+  }
+}

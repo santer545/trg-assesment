@@ -5,4 +5,8 @@ export interface Location {
   name: string;
 }
 
-export interface LocationData extends Omit<Location, 'coordinates'> {}
+export interface LocationData extends Omit<Location, 'coordinates'> {
+  id: number;
+  xCoord: number;
+  yCoord: number;
+}

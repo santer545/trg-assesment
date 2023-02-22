@@ -1,4 +1,3 @@
-import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -7,8 +6,7 @@ import { LocationsComponent } from './locations.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LocationsService } from './services/locations.service';
 import { LocationListComponent } from './components/location-list/location-list.component';
-import { MatTableModule } from '@angular/material/table';
-import { MatSortModule } from '@angular/material/sort';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [LocationsComponent, LocationListComponent],
@@ -16,9 +14,7 @@ import { MatSortModule } from '@angular/material/sort';
     CommonModule,
     LocationsRoutingModule,
     HttpClientModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
+    SharedModule,
   ],
   providers: [LocationsService],
 })

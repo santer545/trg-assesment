@@ -1,23 +1,30 @@
-import { Component, Inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { LocationData } from '@app/trg-locations/models/location.model';
 
 @Component({
-  selector: 'trg-add-data-dialog',
-  templateUrl: './add-data-dialog.component.html',
-  styleUrls: ['./add-data-dialog.component.scss'],
+  selector: 'trg-confirm-dialog',
+  templateUrl: './confirm-dialog.component.html',
+  styleUrls: ['./confirm-dialog.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AddDataDialogComponent {
+export class ConfirmDialogComponent {
   isActionDisabled = false;
   location: LocationData = {
-    id: this.locations?.length || 0,
+    id: this.data.id || 0,
     name: '',
     xCoord: 0,
     yCoord: 0,
   };
   constructor(
-    public dialogRef: MatDialogRef<AddDataDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public locations: LocationData[]
+    public dialogRef: MatDialogRef<ConfirmDialogComponent>,
+    @Inject(MAT_DIALOG_DATA)
+    public data: {
+      id: number;
+      title: string;
+      action: string;
+      location: LocationData;
+    }
   ) {}
 
   closeDialog() {

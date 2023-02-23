@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AddDataDialogComponent } from './components/add-data-dialog/add-data-dialog.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
@@ -10,15 +9,11 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { EditDataDialogComponent } from './components/edit-data-dialog/edit-data-dialog.component';
 import { LocationFormComponent } from './components/location-form/location-form.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
-  declarations: [
-    AddDataDialogComponent,
-    EditDataDialogComponent,
-    LocationFormComponent,
-  ],
+  declarations: [LocationFormComponent, ConfirmDialogComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -33,8 +28,6 @@ import { LocationFormComponent } from './components/location-form/location-form.
     MatInputModule,
   ],
   exports: [
-    AddDataDialogComponent,
-    EditDataDialogComponent,
     LocationFormComponent,
     MatTableModule,
     MatPaginatorModule,

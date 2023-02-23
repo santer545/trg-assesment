@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy } from '@angular/core';
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { EditDataDialogComponent } from '@app-shared/components/edit-data-dialog/edit-data-dialog.component';
+import { ConfirmDialogComponent } from '@app-shared/components/confirm-dialog/confirm-dialog.component';
 import { LocationData } from '@app/trg-locations/models/location.model';
 
 @Component({
@@ -17,9 +17,13 @@ export class EditLocationComponent {
   @Output() updatedData = new EventEmitter<LocationData[]>();
 
   handleEditData(): void {
-    const dialogRef = this.dialog.open(EditDataDialogComponent, {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '350px',
-      data: this.location,
+      data: {
+        title: 'Update location',
+        location: this.location,
+        action: 'Edit',
+      },
     });
 
     dialogRef.afterClosed().subscribe((location: LocationData) => {

@@ -1,7 +1,7 @@
-<h1 mat-dialog-title>Create new location</h1>
+<h1 mat-dialog-title>{{ data.title }}</h1>
 <div mat-dialog-content>
   <trg-location-form
-    [location]="location"
+    [location]="data.location || location"
     (updatedLocation)="handleUpdatedData($event)"
     (isDirtyForm)="handleActionStatus($event)"
   ></trg-location-form>
@@ -13,8 +13,7 @@
     color="primary"
     [mat-dialog-close]="location"
     [disabled]="isActionDisabled"
-    cdkFocusInitial
   >
-    Add New Location
+    {{ data.action }}
   </button>
 </div>

@@ -8,15 +8,21 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { EditDataDialogComponent } from './components/edit-data-dialog/edit-data-dialog.component';
+import { LocationFormComponent } from './components/location-form/location-form.component';
 
 @NgModule({
-  declarations: [AddDataDialogComponent, EditDataDialogComponent],
+  declarations: [
+    AddDataDialogComponent,
+    EditDataDialogComponent,
+    LocationFormComponent,
+  ],
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
@@ -29,6 +35,7 @@ import { EditDataDialogComponent } from './components/edit-data-dialog/edit-data
   exports: [
     AddDataDialogComponent,
     EditDataDialogComponent,
+    LocationFormComponent,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,

@@ -10,8 +10,6 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
-import { AddDataDialogComponent } from '@app-shared/components/add-data-dialog/add-data-dialog.component';
-import { EditDataDialogComponent } from '@app-shared/components/edit-data-dialog/edit-data-dialog.component';
 
 @Component({
   selector: 'trg-location-list',
@@ -41,29 +39,11 @@ export class LocationListComponent implements AfterViewInit {
       data[header as keyof LocationData];
   }
 
-  handleAddData(): void {
-    const dialogRef = this.dialog.open(AddDataDialogComponent, {
-      width: '350px',
-    });
-
-    dialogRef.afterClosed().subscribe((location: LocationData) => {
-      if (location) {
-        this.dataSource.data = [...this.locations, location];
-      }
-    });
+  handleAddLocations(updatedData: LocationData[]): void {
+    this.dataSource.data = [...updatedData];
   }
 
-  handleEditData(location: LocationData): void {
-    const dialogRef = this.dialog.open(EditDataDialogComponent, {
-      width: '350px',
-      data: location,
-    });
-
-    dialogRef.afterClosed().subscribe((location: LocationData) => {
-      if (location) {
-        this.locations[location.id] = location;
-        this.dataSource.data = [...this.locations];
-      }
-    });
+  handleEditLocations(updatedData: LocationData[]): void {
+    this.dataSource.data = [...updatedData];
   }
 }

@@ -8,6 +8,7 @@ import { LocationData } from '@app/trg-locations/models/location.model';
   styleUrls: ['./edit-data-dialog.component.scss'],
 })
 export class EditDataDialogComponent {
+  isActionDisabled = false;
   constructor(
     public dialogRef: MatDialogRef<EditDataDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public location: LocationData
@@ -15,5 +16,13 @@ export class EditDataDialogComponent {
 
   closeDialog(): void {
     this.dialogRef.close();
+  }
+
+  handleUpdatedData(updatedLocation: Omit<LocationData, 'id'>) {
+    this.location = { id: this.location.id, ...updatedLocation };
+  }
+
+  handleActionStatus(status: boolean) {
+    this.isActionDisabled = status;
   }
 }

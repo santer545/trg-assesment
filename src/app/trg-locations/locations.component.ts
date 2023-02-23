@@ -3,6 +3,7 @@ import { map } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { LocationsService } from './services/locations.service';
 import { Location, LocationData } from './models/location.model';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'trg-locations',
@@ -16,12 +17,12 @@ export class LocationsComponent implements OnInit {
   ngOnInit(): void {
     this.locations$ = this.locationService.getLocationSet().pipe(
       map((locations) =>
-        locations.map((location, index) => {
+        locations.map(({ id, name, coordinates }) => {
           return {
-            id: Date.now(),
-            xCoord: location.coordinates[0],
-            yCoord: location.coordinates[1],
-            name: location.name,
+            id,
+            name,
+            xCoord: coordinates[0],
+            yCoord: coordinates[1],
           } satisfies LocationData;
         })
       )

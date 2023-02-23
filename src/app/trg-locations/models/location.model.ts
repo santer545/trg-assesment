@@ -1,6 +1,7 @@
 type Coordinates = [x: number, y: number];
 
 export interface Location {
+  id: number;
   coordinates: Coordinates;
   name: string;
 }

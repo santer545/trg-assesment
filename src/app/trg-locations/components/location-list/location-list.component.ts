@@ -5,7 +5,7 @@ import {
   Input,
   ViewChild,
 } from '@angular/core';
-import { LocationData } from '../../models/location.model';
+import { LocationData } from '../../../models/location.model';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
@@ -19,7 +19,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class LocationListComponent implements AfterViewInit {
   @Input() locations!: LocationData[];
-  displayedColumns: string[] = ['name', 'xCoord', 'yCoord', 'action'];
+  displayedColumns: string[] = ['name', 'lng', 'ltd', 'action'];
   dataSource!: MatTableDataSource<LocationData>;
 
   @ViewChild(MatTable) table!: MatTable<LocationData[]>;

@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy } from '@angular/core';
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from '@app-shared/components/confirm-dialog/confirm-dialog.component';
-import { LocationData } from '@app/trg-locations/models/location.model';
+import { LocationData } from '@app/models/location.model';
 
 @Component({
   selector: 'trg-edit-location',

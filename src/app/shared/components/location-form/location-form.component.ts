@@ -13,14 +13,14 @@ import {
   NonNullableFormBuilder,
   Validators,
 } from '@angular/forms';
-import { LocationData } from '@app/trg-locations/models/location.model';
+import { LocationData } from '@app/models/location.model';
 import { Subject } from 'rxjs';
 import { distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
 interface LocationForm {
   name: FormControl<string>;
-  xCoord: FormControl<number>;
-  yCoord: FormControl<number>;
+  lng: FormControl<number>;
+  ltd: FormControl<number>;
 }
 
 @Component({
@@ -45,8 +45,8 @@ export class LocationFormComponent implements OnInit, OnDestroy {
         this.location.name || '',
         Validators.compose([Validators.required, Validators.maxLength(20)])
       ),
-      xCoord: this.fb.control<number>(
-        this.location.xCoord || 0,
+      lng: this.fb.control<number>(
+        this.location.lng || 0,
         Validators.compose([
           Validators.required,
           Validators.pattern(/^\d*\.?\d*$/),
@@ -54,8 +54,8 @@ export class LocationFormComponent implements OnInit, OnDestroy {
           Validators.min(-180),
         ])
       ),
-      yCoord: this.fb.control<number>(
-        this.location.yCoord || 0,
+      ltd: this.fb.control<number>(
+        this.location.ltd || 0,
         Validators.compose([
           Validators.required,
           Validators.pattern(/^\d*\.?\d*$/),
@@ -69,13 +69,13 @@ export class LocationFormComponent implements OnInit, OnDestroy {
 
     this.form.valueChanges
       .pipe(distinctUntilChanged(), takeUntil(this.destroy$))
-      .subscribe(({ name, xCoord, yCoord }) => {
-        if (name && xCoord && yCoord) {
+      .subscribe(({ name, lng, ltd }) => {
+        if (name && lng && ltd) {
           this.updatedLocation.emit({
             id: this.location.id,
             name,
-            xCoord,
-            yCoord,
+            lng,
+            ltd,
           });
         }
       });

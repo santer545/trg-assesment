@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { LocationData } from '@app/trg-locations/models/location.model';
+import { LocationData } from '@app/models/location.model';
 
 @Component({
   selector: 'trg-confirm-dialog',
@@ -13,8 +13,8 @@ export class ConfirmDialogComponent {
   location: LocationData = {
     id: this.data.id || 0,
     name: '',
-    xCoord: 0,
-    yCoord: 0,
+    lng: 0,
+    ltd: 0,
   };
   constructor(
     public dialogRef: MatDialogRef<ConfirmDialogComponent>,

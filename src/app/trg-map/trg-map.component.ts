@@ -22,7 +22,6 @@ export class TrgMapComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe((locations) => {
         this.mapBoxService.getMarkers(locations);
-        console.log('@!!!!!', this.mapBoxService.locationInfo);
       });
   }
 

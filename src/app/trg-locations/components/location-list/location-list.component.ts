@@ -5,11 +5,12 @@ import {
   Input,
   ViewChild,
 } from '@angular/core';
-import { LocationData } from '../../../models/location.model';
+
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
+import { LocationData } from '@app/models/location.model';
 
 @Component({
   selector: 'trg-location-list',

@@ -64,7 +64,6 @@ export class MapBoxService {
       });
 
       popup.on('open', (e) => {
-        console.log(e);
         this.sidenavService.open();
       });
 

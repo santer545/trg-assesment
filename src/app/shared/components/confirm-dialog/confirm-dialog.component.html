@@ -7,7 +7,9 @@
   ></trg-location-form>
 </div>
 <div mat-dialog-actions>
-  <button mat-raised-button (click)="closeDialog()">Close</button>
+  <button mat-raised-button (click)="closeDialog()">
+    {{ "actions.close" | translate }}
+  </button>
   <button
     mat-raised-button
     color="primary"

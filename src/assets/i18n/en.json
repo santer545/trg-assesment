@@ -1,0 +1,28 @@
+{
+  "location": {
+    "title": "Location Info",
+    "longitude": "Location Longitude",
+    "latitude": "Location Latitude",
+    "name": "Location Name",
+    "add": "Add Location",
+    "create": "Create New Location",
+    "update": "Update Location"
+  },
+  "toolbar": {
+    "map": "Trg Map",
+    "locations": "Locations"
+  },
+  "table": {
+    "paginator": "Please select page"
+  },
+  "validation": {
+    "name": "Name is required",
+    "nameLength1": "Must be no more than",
+    "nameLength2": "characters long",
+    "range": "The value should be in a range between [-180, 180]"
+  },
+  "actions": {
+    "close": "Close",
+    "edit": "Edit"
+  }
+}

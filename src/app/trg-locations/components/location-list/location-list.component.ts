@@ -35,8 +35,13 @@ export class LocationListComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-    this.dataSource.sortingDataAccessor = (data, header) =>
-      data[header as keyof LocationData];
+
+    this.dataSource.sortingDataAccessor = (data, header) => {
+      if (data.name.match(/(\d+)/g) && header === 'name') {
+        return Number(data.name.match(/(\d+)/g));
+      }
+      return data[header as keyof LocationData];
+    };
   }
 
   handleAddLocations(updatedData: LocationData[]): void {

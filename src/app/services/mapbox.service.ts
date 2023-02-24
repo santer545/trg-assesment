@@ -60,8 +60,12 @@ export class MapBoxService {
         .addTo(this.map);
 
       popup.on('close', (e) => {
-        console.log(e);
         this.sidenavService.close();
+      });
+
+      popup.on('open', (e) => {
+        console.log(e);
+        this.sidenavService.open();
       });
 
       marker.getElement().addEventListener('click', (event) => {

@@ -1,0 +1,5 @@
+Big count of markers will definately decrease the perfomance
+
+1. Would be better to use MapBox layers instead of markers then we have a lot of them.
+2. We can combine layers during the zooming and show not all markers but some groups of them
+3. Use correct data inside geoJson

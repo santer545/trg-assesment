@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { LocationData } from '@app/models/location.model';
 import { EventEmitter } from '@angular/core';
 import { ChangeDetectionStrategy } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'trg-add-location',
@@ -12,6 +13,7 @@ import { ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AddLocationComponent {
+  private translationService = inject(TranslateService);
   dialog = inject(MatDialog);
 
   @Input() locations!: LocationData[];
@@ -23,8 +25,8 @@ export class AddLocationComponent {
       width: '350px',
       data: {
         id: this.locations?.length,
-        title: 'Create New Location',
-        action: 'Add New Location',
+        title: this.translationService.instant('location.create'),
+        action: this.translationService.instant('location.add'),
       },
     });
 

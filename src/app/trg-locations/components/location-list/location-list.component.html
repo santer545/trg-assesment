@@ -7,7 +7,7 @@
         mat-sort-header
         sortActionDescription="Sort by name"
       >
-        Name
+        {{ "location.name" | translate }}
       </th>
       <td mat-cell *matCellDef="let element">{{ element?.name }}</td>
     </ng-container>
@@ -19,7 +19,7 @@
         mat-sort-header
         sortActionDescription="Sort by longitude"
       >
-        Longitude
+        {{ "location.longitude" | translate }}
       </th>
       <td mat-cell *matCellDef="let element">{{ element?.lng }}</td>
     </ng-container>
@@ -31,7 +31,7 @@
         mat-sort-header
         sortActionDescription="Sort by latitude"
       >
-        Latitude
+        {{ "location.latitude" | translate }}
       </th>
       <td mat-cell *matCellDef="let element">{{ element?.ltd }}</td>
     </ng-container>
@@ -54,7 +54,7 @@
   <mat-paginator
     [pageSizeOptions]="[5, 10, 20]"
     showFirstLastButtons
-    aria-label="Please select page"
+    [attr.aria-label]="'table.paginator' | translate"
   >
   </mat-paginator>
 </div>

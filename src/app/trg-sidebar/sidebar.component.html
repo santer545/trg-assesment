@@ -1,17 +1,17 @@
 <div class="sidebar">
-  <h1>Location Info</h1>
+  <h1>{{ "location.title" | translate }}</h1>
   <mat-divider></mat-divider>
   <ng-container *ngIf="locationItem$ | async as locationItem">
     <div class="sidebar-item">
-      <h3>Location name:</h3>
+      <h3>{{ "location.name" | translate }}:</h3>
       <div>{{ locationItem?.name }}</div>
     </div>
     <div class="sidebar-item">
-      <h3>Location longitude:</h3>
+      <h3>{{ "location.longitude" | translate }}:</h3>
       <div>{{ locationItem?.lng }}</div>
     </div>
     <div class="sidebar-item">
-      <h3>Location latitude:</h3>
+      <h3>{{ "location.latitude" | translate }}:</h3>
       <div>{{ locationItem?.ltd }}</div>
     </div>
   </ng-container>

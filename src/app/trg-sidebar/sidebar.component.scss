@@ -1,0 +1,20 @@
+.sidebar {
+  padding: 20px;
+
+  &-item {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      margin: 0;
+    }
+  }
+}
+
+:host ::ng-deep {
+  mat-divider {
+    margin-bottom: 30px;
+  }
+}

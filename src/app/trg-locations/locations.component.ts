@@ -1,8 +1,8 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
-import { LocationsService } from './services/locations.service';
-import { Location, LocationData } from './models/location.model';
+import { LocationsService } from '../services/locations.service';
+import { LocationItem, LocationData } from '../models/location.model';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
@@ -21,8 +21,8 @@ export class LocationsComponent implements OnInit {
           return {
             id,
             name,
-            xCoord: coordinates[0],
-            yCoord: coordinates[1],
+            lng: coordinates[0],
+            ltd: coordinates[1],
           } satisfies LocationData;
         })
       )

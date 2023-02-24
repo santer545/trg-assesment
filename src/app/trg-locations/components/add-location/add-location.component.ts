@@ -1,7 +1,7 @@
 import { ConfirmDialogComponent } from '@app-shared/components/confirm-dialog/confirm-dialog.component';
 import { Component, inject, Input, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { LocationData } from '@app/trg-locations/models/location.model';
+import { LocationData } from '@app/models/location.model';
 import { EventEmitter } from '@angular/core';
 import { ChangeDetectionStrategy } from '@angular/core';
 

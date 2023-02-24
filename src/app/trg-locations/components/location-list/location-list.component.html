@@ -12,28 +12,28 @@
       <td mat-cell *matCellDef="let element">{{ element?.name }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="xCoord">
+    <ng-container matColumnDef="lng">
       <th
         mat-header-cell
         *matHeaderCellDef
         mat-sort-header
-        sortActionDescription="Sort by x-coord"
+        sortActionDescription="Sort by longitude"
       >
-        X-Coord
+        Longitude
       </th>
-      <td mat-cell *matCellDef="let element">{{ element?.xCoord }}</td>
+      <td mat-cell *matCellDef="let element">{{ element?.lng }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="yCoord">
+    <ng-container matColumnDef="ltd">
       <th
         mat-header-cell
         *matHeaderCellDef
         mat-sort-header
-        sortActionDescription="Sort by y-coord"
+        sortActionDescription="Sort by latitude"
       >
-        Y-Coord
+        Latitude
       </th>
-      <td mat-cell *matCellDef="let element">{{ element?.yCoord }}</td>
+      <td mat-cell *matCellDef="let element">{{ element?.ltd }}</td>
     </ng-container>
 
     <ng-container matColumnDef="action">

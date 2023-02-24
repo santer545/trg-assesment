@@ -1,6 +1,10 @@
 <div class="location-wrapper">
   <trg-location-list
-    *ngIf="locations$ | async as locations"
+    *ngIf="locations$ | async as locations; else loader"
     [locations]="locations"
   ></trg-location-list>
 </div>
+
+<ng-template #loader>
+  <mat-spinner></mat-spinner>
+</ng-template>

@@ -1,9 +1,18 @@
 <div class="wrapper">
-  <header class="header sticky">
-    <trg-navbar></trg-navbar>
-  </header>
-  <main>
-    <aside></aside>
-    <router-outlet></router-outlet>
+  <mat-toolbar color="primary">
+    <header class="header">
+      <trg-navbar></trg-navbar>
+    </header>
+  </mat-toolbar>
+
+  <main class="main">
+    <mat-sidenav-container class="sidebar-container">
+      <mat-sidenav #sidenav mode="side" closed class="sidebar-wrapper">
+        <trg-sidebar></trg-sidebar>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
   </main>
 </div>

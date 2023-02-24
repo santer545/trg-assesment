@@ -3,6 +3,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   Input,
+  OnChanges,
   ViewChild,
 } from '@angular/core';
 
@@ -18,7 +19,7 @@ import { LocationData } from '@app/models/location.model';
   styleUrls: ['./location-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LocationListComponent implements AfterViewInit {
+export class LocationListComponent implements AfterViewInit, OnChanges {
   @Input() locations!: LocationData[];
   displayedColumns: string[] = ['name', 'lng', 'ltd', 'action'];
   dataSource!: MatTableDataSource<LocationData>;
@@ -29,7 +30,7 @@ export class LocationListComponent implements AfterViewInit {
 
   constructor(public dialog: MatDialog) {}
 
-  ngOnInit(): void {
+  ngOnChanges() {
     this.dataSource = new MatTableDataSource<LocationData>(this.locations);
   }
 

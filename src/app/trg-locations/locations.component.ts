@@ -2,8 +2,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { LocationsService } from '../services/locations.service';
-import { LocationItem, LocationData } from '../models/location.model';
-import { MatTableDataSource } from '@angular/material/table';
+import { LocationData } from '../models/location.model';
 
 @Component({
   selector: 'trg-locations',

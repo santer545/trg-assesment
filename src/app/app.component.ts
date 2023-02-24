@@ -3,7 +3,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { SidenavService } from './services/sidenav.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'trg-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

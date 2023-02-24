@@ -59,15 +59,15 @@ export class MapBoxService {
         .setPopup(popup)
         .addTo(this.map);
 
-      popup.on('close', (e) => {
+      popup.on('close', () => {
         this.sidenavService.close();
       });
 
-      popup.on('open', (e) => {
+      popup.on('open', () => {
         this.sidenavService.open();
       });
 
-      marker.getElement().addEventListener('click', (event) => {
+      marker.getElement().addEventListener('click', () => {
         const element =
           locations.find(
             (location) =>
